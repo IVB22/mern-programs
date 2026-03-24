@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial Program</title>
+</head>
+<body>
+    <h2>Factorial of a number</h2>
+    <input type="number" id="numberInput" placeholder="Enter a non-negative integer">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <p id="result"></p>
+    <script>
+        function calculateFactorial() {
+            let num =document.getElementById('numberInput').value;
+            if ( num < 0) {
+                document.getElementById('result').innerText = 'Please enter a valid non-negative integer.';
+                return;
+            }
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            document.getElementById('result').innerText = "Factorial of " + num + " is " + factorial + ".";
+        }
+        </script>
+</body>
+</html>

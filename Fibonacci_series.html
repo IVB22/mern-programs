@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Program</title>
+</head>
+<body>
+    <h2>Fibonacci Series</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="calculateFibonacci()">Generate Fibonacci Series</button>
+    <p id="result"></p>
+    <script>
+        function calculateFibonacci() {
+            let num = document.getElementById('numberInput').value;
+            if ( num <= 0) {
+                document.getElementById('result').innerText = 'Please enter a valid positive integer.';
+                return;
+            }
+            let fibSeries = [];
+            let a = 0, b = 1;
+            for (let i = 0; i < num; i++) {
+                fibSeries.push(a);
+                let temp = a + b;
+                a = b;
+                b = temp;
+            }
+            document.getElementById('result').innerText = "Fibonacci Series: " + fibSeries.join(', ') + ".";
+        }
+    </script>
+</body>
+</html>
